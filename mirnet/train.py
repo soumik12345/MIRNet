@@ -3,6 +3,7 @@ import tensorflow as tf
 from typing import List
 from .utils import psnr
 from .model import mirnet_model
+from wandb.keras import WandbCallback
 from .dataloaders import LOLDataLoader
 
 
@@ -48,7 +49,7 @@ class LowLightTrainer:
                 os.path.join(checkpoint_dir, 'low_light_weights_best.h5'),
                 monitor="val_psnr", save_weights_only=True,
                 mode="max", save_best_only=True, period=1
-            )
+            ), WandbCallback()
         ]
         history = self.model.fit(
             self.train_dataset, validation_data=self.valid_dataset,
