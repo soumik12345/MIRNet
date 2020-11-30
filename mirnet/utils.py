@@ -1,5 +1,7 @@
 import os
+import gdown
 import wandb
+import subprocess
 import tensorflow as tf
 
 
@@ -17,3 +19,22 @@ def init_wandb(project_name, experiment_name, wandb_api_key):
     if project_name is not None and experiment_name is not None:
         os.environ['WANDB_API_KEY'] = wandb_api_key
         wandb.init(project=project_name, name=experiment_name)
+
+
+def download_dataset(dataset_tag):
+    """Utility for downloading and unpacking dataset dataset
+    Args:
+        dataset_tag: Tag for the respective dataset.
+        Available tags -> ('LOL')
+    """
+    print('Downloading dataset...')
+    if dataset_tag == 'zero_dce':
+        gdown.download(
+            'https://drive.google.com/uc?id=157bjO1_cFuSd0HWDUuAmcHRJDVyWpOxB',
+            'Dataset_Part1.rar', quiet=False
+        )
+        print('Unpacking Dataset')
+        subprocess.run('unrar x Dataset_Part1.rar'.split(' '))
+        print('Done!!!')
+    else:
+        raise AssertionError('Dataset tag not found')
