@@ -34,7 +34,8 @@ def download_dataset(dataset_tag):
             'LOLdataset.zip', quiet=False
         )
         print('Unpacking Dataset')
-        subprocess.run('unrar x LOLdataset.zip'.split(' '))
+        subprocess.run('unzip -q LOLdataset.zip -d ./data/'.split(' '))
+        subprocess.run('rm LOLdataset.zip'.split(' '))
         print('Done!!!')
     else:
         raise AssertionError('Dataset tag not found')
