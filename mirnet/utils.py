@@ -31,10 +31,10 @@ def download_dataset(dataset_tag):
     if dataset_tag == 'zero_dce':
         gdown.download(
             'https://drive.google.com/uc?id=157bjO1_cFuSd0HWDUuAmcHRJDVyWpOxB',
-            'Dataset_Part1.rar', quiet=False
+            'LOLdataset.zip', quiet=False
         )
         print('Unpacking Dataset')
-        subprocess.run('unrar x Dataset_Part1.rar'.split(' '))
+        subprocess.run('unrar x LOLdataset.zip'.split(' '))
         print('Done!!!')
     else:
         raise AssertionError('Dataset tag not found')
