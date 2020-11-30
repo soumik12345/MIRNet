@@ -28,7 +28,7 @@ def download_dataset(dataset_tag):
         Available tags -> ('LOL')
     """
     print('Downloading dataset...')
-    if dataset_tag == 'zero_dce':
+    if dataset_tag == 'LOL':
         gdown.download(
             'https://drive.google.com/uc?id=157bjO1_cFuSd0HWDUuAmcHRJDVyWpOxB',
             'LOLdataset.zip', quiet=False
