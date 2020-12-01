@@ -53,6 +53,6 @@ class LowLightTrainer:
         ]
         history = self.model.fit(
             self.train_dataset, validation_data=self.valid_dataset,
-            epochs=epochs, callbacks=callbacks
+            epochs=epochs, callbacks=callbacks, verbose=1
         )
         return history
