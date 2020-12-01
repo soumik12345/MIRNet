@@ -22,6 +22,21 @@ Restoration and Enhancement](https://arxiv.org/pdf/2003.06792v2.pdf).
 ![](./assets/lol/example_2.png)
 ![](./assets/lol/example_3.png)
 
+### Trained on 256x256 patches
+
+**Wights Link:** [https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing](https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing)
+
+![](./assets/lol/example_12.png)
+![](./assets/lol/example_13.png)
+![](./assets/lol/example_15.png)
+![](./assets/lol/example_18.png)
+![](./assets/lol/example_19.png)
+![](./assets/lol/example_21.png)
+![](./assets/lol/example_25.png)
+![](./assets/lol/example_26.png)
+![](./assets/lol/example_27.png)
+![](./assets/lol/example_28.png)
+
 ## Citation
 
 ```
