@@ -9,6 +9,17 @@ Restoration and Enhancement](https://arxiv.org/pdf/2003.06792v2.pdf).
 
 ![](./assets/mirnet_architecture.png)
 
+## Result of Low-Light Image Enhancement
+
+### Trained on 128x128 patches
+
+![](./assets/lol/example_10.png)
+![](./assets/lol/example_11.png)
+![](./assets/lol/example_9.png)
+![](./assets/lol/example_1.png)
+![](./assets/lol/example_2.png)
+![](./assets/lol/example_3.png)
+
 ## Citation
 
 ```
