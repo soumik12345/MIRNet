@@ -3,6 +3,7 @@ import gdown
 import wandb
 import subprocess
 import tensorflow as tf
+from matplotlib import pyplot as plt
 
 
 def psnr(y_true, y_pred):
@@ -38,3 +39,17 @@ def download_dataset(dataset_tag):
         print('Done!!!')
     else:
         raise AssertionError('Dataset tag not found')
+
+
+def plot_result(image, enhanced):
+    """Utility for Plotting inference result
+    Args:
+        image: original image
+        enhanced: enhanced image
+    """
+    fig = plt.figure(figsize=(12, 12))
+    fig.add_subplot(1, 2, 1).set_title('Original Image')
+    _ = plt.imshow(image)
+    fig.add_subplot(1, 2, 2).set_title('Enhanced Image')
+    _ = plt.imshow(enhanced)
+    plt.show()
