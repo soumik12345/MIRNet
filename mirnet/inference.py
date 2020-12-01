@@ -11,7 +11,7 @@ class Inferer:
         self.model = None
 
     @staticmethod
-    def download_dataset(file_id: str):
+    def download_weights(file_id: str):
         gdown.download(
             'https://drive.google.com/uc?id={}'.format(file_id),
             'low_light_weights_best.h5', quiet=False
