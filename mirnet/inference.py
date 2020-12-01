@@ -1,3 +1,4 @@
+import gdown
 import numpy as np
 from PIL import Image
 import tensorflow as tf
@@ -8,6 +9,13 @@ class Inferer:
 
     def __init__(self):
         self.model = None
+
+    @staticmethod
+    def download_dataset(file_id: str):
+        gdown.download(
+            'https://drive.google.com/uc?id={}'.format(file_id),
+            'low_light_weights_best.h5', quiet=False
+        )
 
     def build_model(self, num_rrg: int, num_mrb: int, channels: int, weights_path: str):
         self.model = mirnet_model(num_rrg, num_mrb, channels)
