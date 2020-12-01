@@ -31,7 +31,8 @@ def multi_scale_residual_block(input_tensor, channels):
     level2_dau_2 = up_sampling_module((dual_attention_unit_block(level2_skff)))
     level3_dau_2 = up_sampling_module(up_sampling_module(dual_attention_unit_block(level3_skff)))
     # SKFF 2
-    skff_ = selective_kernel_feature_fusion(level1_dau_2, level3_dau_2, level3_dau_2)
+    # skff_ = selective_kernel_feature_fusion(level1_dau_2, level3_dau_2, level3_dau_2)
+    skff_ = selective_kernel_feature_fusion(level1_dau_2, level2_dau_2, level3_dau_2)
     conv = tf.keras.layers.Conv2D(channels, kernel_size=(3, 3), padding='same')(skff_)
     return tf.keras.layers.Add()([input_tensor, conv])
 
@@ -46,8 +47,8 @@ def recursive_residual_group(input_tensor, num_mrb, channels):
     return tf.keras.layers.Add()([conv2, input_tensor])
 
 
-def mirnet_model(num_rrg, num_mrb, channels):
-    input_tensor = tf.keras.Input(shape=[None, None, 3])
+def mirnet_model(image_size: int, num_rrg: int, num_mrb: int, channels: int):
+    input_tensor = tf.keras.Input(shape=[image_size, image_size, 3])
     x1 = tf.keras.layers.Conv2D(
         channels, kernel_size=(3, 3), padding='same')(input_tensor)
     for _ in range(num_rrg):

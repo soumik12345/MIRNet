@@ -35,7 +35,6 @@ Restoration and Enhancement](https://arxiv.org/pdf/2003.06792v2.pdf).
 ![](./assets/lol/example_25.png)
 ![](./assets/lol/example_26.png)
 ![](./assets/lol/example_27.png)
-![](./assets/lol/example_28.png)
 
 ## Citation
 

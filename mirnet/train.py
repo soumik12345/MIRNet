@@ -11,6 +11,7 @@ class LowLightTrainer:
 
     def __init__(self):
         self.model = None
+        self.crop_size = None
         self.train_dataset = None
         self.valid_dataset = None
         self.strategy = tf.distribute.OneDeviceStrategy("GPU:0")
@@ -21,6 +22,7 @@ class LowLightTrainer:
             self, train_low_light_images: List[str], train_high_light_images: List[str],
             valid_low_light_images: List[str], valid_high_light_images: List[str],
             crop_size: int, batch_size: int):
+        self.crop_size = crop_size
         with self.strategy.scope():
             self.train_dataset = LOLDataLoader(
                 images_lowlight=train_low_light_images,
@@ -35,7 +37,7 @@ class LowLightTrainer:
 
     def compile(self, learning_rate=1e-4):
         with self.strategy.scope():
-            self.model = mirnet_model(3, 2, 64)
+            self.model = mirnet_model(self.crop_size, 3, 2, 64)
             loss_function = tf.keras.losses.MeanAbsoluteError()
             optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
             self.model.compile(optimizer=optimizer, loss=loss_function, metrics=[psnr])

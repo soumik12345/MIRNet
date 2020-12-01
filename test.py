@@ -6,7 +6,7 @@ from mirnet.dataloaders import LOLDataLoader
 
 
 def test_output_dim():
-    mirnet = mirnet_model(3, 2, 64)
+    mirnet = mirnet_model(256, 3, 2, 64)
     x = tf.ones((1, 256, 256, 3))
     y = mirnet(x)
     assert x.shape == y.shape
@@ -33,4 +33,5 @@ def test_dataloader():
 
 
 if __name__ == '__main__':
-    test_dataloader()
+    # test_dataloader()
+    test_output_dim()
