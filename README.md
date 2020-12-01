@@ -13,6 +13,8 @@ Restoration and Enhancement](https://arxiv.org/pdf/2003.06792v2.pdf).
 
 ### Trained on 128x128 patches
 
+**Wights Link:** [https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing](https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing)
+
 ![](./assets/lol/example_10.png)
 ![](./assets/lol/example_11.png)
 ![](./assets/lol/example_9.png)
