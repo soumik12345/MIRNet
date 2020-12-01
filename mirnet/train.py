@@ -43,12 +43,12 @@ class LowLightTrainer:
             ),
             tf.keras.callbacks.ReduceLROnPlateau(
                 monitor='val_psnr', factor=0.5,
-                patience=5, verbose=1, epsilon=1e-7, mode='max'
+                patience=5, verbose=1, min_delta=1e-7, mode='max'
             ),
             tf.keras.callbacks.ModelCheckpoint(
                 os.path.join(checkpoint_dir, 'low_light_weights_best.h5'),
                 monitor="val_psnr", save_weights_only=True,
-                mode="max", save_best_only=True, period=1
+                mode="max", save_best_only=True, save_freq=1
             ), WandbCallback()
         ]
         history = self.model.fit(
