@@ -3,6 +3,7 @@ import tensorflow as tf
 from typing import List
 from .utils import psnr
 from .model import mirnet_model
+from .losses import charbonnier_loss
 from wandb.keras import WandbCallback
 from .dataloaders import LOLDataLoader
 
@@ -35,10 +36,10 @@ class LowLightTrainer:
             ).build_dataset(
                 image_crop_size=crop_size, batch_size=batch_size, is_dataset_train=False)
 
-    def compile(self, learning_rate=1e-4):
+    def compile(self, num_rrg=3, num_mrb=2, channels=64, learning_rate=1e-4, use_mae_loss=True):
         with self.strategy.scope():
-            self.model = mirnet_model(self.crop_size, 3, 2, 64)
-            loss_function = tf.keras.losses.MeanAbsoluteError()
+            self.model = mirnet_model(self.crop_size, num_rrg, num_mrb, channels)
+            loss_function = tf.keras.losses.MeanAbsoluteError() if use_mae_loss else charbonnier_loss
             optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
             self.model.compile(optimizer=optimizer, loss=loss_function, metrics=[psnr])
 
