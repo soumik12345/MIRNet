@@ -17,11 +17,9 @@ class Inferer:
             'low_light_weights_best.h5', quiet=False
         )
 
-    def build_model(
-            self, train_crop_size:int, num_rrg: int,
-            num_mrb: int, channels: int, weights_path: str):
+    def build_model(self, num_rrg: int, num_mrb: int, channels: int, weights_path: str):
         self.model = mirnet_model(
-            image_size=train_crop_size, num_rrg=num_rrg,
+            image_size=None, num_rrg=num_rrg,
             num_mrb=num_mrb, channels=channels
         )
         self.model.load_weights(weights_path)
