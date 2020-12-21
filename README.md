@@ -7,6 +7,12 @@ Restoration and Enhancement](https://arxiv.org/pdf/2003.06792v2.pdf).
 
 **Wandb Logs:** [https://wandb.ai/19soumik-rakshit96/mirnet](https://wandb.ai/19soumik-rakshit96/mirnet)
 
+**TFLite Variant of MIRNet:** [https://github.com/sayakpaul/MIRNet-TFLite](https://github.com/sayakpaul/MIRNet-TFLite).
+
+**TFLite Models on Tensorflow Hub:** [https://tfhub.dev/sayakpaul/lite-model/mirnet-fixed/dr/1](https://tfhub.dev/sayakpaul/lite-model/mirnet-fixed/dr/1).
+
+**Tensorflow JS Variant of MIRNet:** [https://github.com/Rishit-dagli/MIRNet-TFJS](https://github.com/Rishit-dagli/MIRNet-TFJS).
+
 ![](./assets/mirnet_architecture.png)
 
 ![](./assets/lol_results.gif)
