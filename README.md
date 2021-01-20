@@ -1,5 +1,7 @@
 # MIRNet
 
+[![](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/soumik12345/mirnet/app.py)
+
 Tensorflow implementation of the MIRNet architecture as proposed by [Learning Enriched Features for Real Image
 Restoration and Enhancement](https://arxiv.org/pdf/2003.06792v2.pdf).
 

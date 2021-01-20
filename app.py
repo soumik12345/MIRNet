@@ -1,4 +1,5 @@
 import os
+import subprocess
 from PIL import Image
 import streamlit as st
 from mirnet.inference import Inferer
@@ -40,6 +41,8 @@ def main():
                     caption='Predicted Image'
                 )
             st.markdown('---')
+    if not os.path.exists('low_light_weights_best.h5'):
+        subprocess.run(['rm', 'low_light_weights_best.h5'])
 
 
 if __name__ == '__main__':
