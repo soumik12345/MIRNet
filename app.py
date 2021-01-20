@@ -22,7 +22,7 @@ def main():
     )
     st.sidebar.text('Done')
     uploaded_files = st.sidebar.file_uploader(
-        'Please Upload your Images',
+        'Please Upload your Low-light Images',
         accept_multiple_files=True
     )
     col_1, col_2 = st.beta_columns(2)
