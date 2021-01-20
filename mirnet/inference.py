@@ -3,6 +3,7 @@ import numpy as np
 from PIL import Image
 import tensorflow as tf
 from .model import mirnet_model
+from .utils import closest_number
 
 
 class Inferer:
@@ -24,15 +25,15 @@ class Inferer:
         )
         self.model.load_weights(weights_path)
 
-    def infer(self, image_path, image_resize_factor=1):
-        original_image = Image.open(image_path)
+    def _predict(self, original_image, image_resize_factor: float = 1.):
         width, height = original_image.size
+        target_width, target_height = (
+            closest_number(width // image_resize_factor, 4),
+            closest_number(height // image_resize_factor, 4)
+        )
         original_image = original_image.resize(
-            (
-                width // image_resize_factor,
-                height // image_resize_factor
-            ),
-            Image.ANTIALIAS)
+            (target_width, target_height), Image.ANTIALIAS
+        )
         image = tf.keras.preprocessing.image.img_to_array(original_image)
         image = image.astype('float32') / 255.0
         image = np.expand_dims(image, axis=0)
@@ -44,4 +45,14 @@ class Inferer:
         )
         output_image = Image.fromarray(np.uint8(output_image))
         original_image = Image.fromarray(np.uint8(original_image))
+        return output_image
+
+    def infer(self, image_path, image_resize_factor: float = 1.):
+        original_image = Image.open(image_path)
+        output_image = self._predict(original_image, image_resize_factor)
+        return original_image, output_image
+
+    def infer_streamlit(self, image_pil, image_resize_factor: float = 1.):
+        original_image = image_pil
+        output_image = self._predict(original_image, image_resize_factor)
         return original_image, output_image

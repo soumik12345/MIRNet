@@ -1,0 +1,7 @@
+gdown==3.12.2
+matplotlib==3.3.3
+streamlit==0.74.1
+tensorflow==2.4.0
+wandb==0.10.14
+Pillow~=8.1.0
+numpy~=1.19.5
