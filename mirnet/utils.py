@@ -53,3 +53,15 @@ def plot_result(image, enhanced):
     fig.add_subplot(1, 2, 2).set_title('Enhanced Image')
     _ = plt.imshow(enhanced)
     plt.show()
+
+
+def closest_number(n, m):
+    q = int(n / m)
+    n1 = m * q
+    if (n * m) > 0:
+        n2 = (m * (q + 1))
+    else:
+        n2 = (m * (q - 1))
+    if abs(n - n1) < abs(n - n2):
+        return n1
+    return n2
