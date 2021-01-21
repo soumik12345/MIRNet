@@ -19,32 +19,11 @@ Restoration and Enhancement](https://arxiv.org/pdf/2003.06792v2.pdf).
 
 ![](./assets/lol_results.gif)
 
-## Result of Low-Light Image Enhancement
+## Pre-trained Weights
 
-### Trained on 128x128 patches
+- **Trained on 128x128 patches:** [https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing](https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing)
 
-**Wights Link:** [https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing](https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing)
-
-![](./assets/lol/example_10.png)
-![](./assets/lol/example_11.png)
-![](./assets/lol/example_9.png)
-![](./assets/lol/example_1.png)
-![](./assets/lol/example_2.png)
-![](./assets/lol/example_3.png)
-
-### Trained on 256x256 patches
-
-**Wights Link:** [https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing](https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing)
-
-![](./assets/lol/example_12.png)
-![](./assets/lol/example_13.png)
-![](./assets/lol/example_15.png)
-![](./assets/lol/example_18.png)
-![](./assets/lol/example_19.png)
-![](./assets/lol/example_21.png)
-![](./assets/lol/example_25.png)
-![](./assets/lol/example_26.png)
-![](./assets/lol/example_27.png)
+- **Trained on 256x256 patches:** [https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing](https://drive.google.com/file/d/1sUlRD5MTRKKGxtqyYDpTv7T3jOW6aVAL/view?usp=sharing)
 
 ## Citation
 
